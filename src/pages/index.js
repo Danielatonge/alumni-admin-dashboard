@@ -52,7 +52,7 @@ const Page = () => (
           sx={{
             display: "flex",
             justifyContent: "center",
-            gap: 3,
+            gap: 4,
             flexWrap: "wrap",
             py: 8
           }}

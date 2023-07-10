@@ -15,6 +15,8 @@ import {
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { UpdateDonationInformation } from 'src/sections/donations/donation-information';
 import { UploadDonationQRCode } from 'src/sections/donations/upload-qrcode';
+import { SuggestDonationInterest } from 'src/sections/donations/suggest-donation-interest';
+import { PaymentQRCode } from 'src/sections/donations/payment-qrcode';
 
 
 const Page = () => (
@@ -48,14 +50,14 @@ const Page = () => (
                 md={6}
                 lg={4}
               >
-                <UploadDonationQRCode />
+                <PaymentQRCode />
               </Grid>
               <Grid
                 xs={12}
                 md={6}
                 lg={8}
               >
-                <UpdateDonationInformation />
+                <SuggestDonationInterest />
               </Grid>
             </Grid>
           </div>
