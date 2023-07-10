@@ -1,15 +1,27 @@
 import Head from 'next/head';
-import { Box, Container, Stack, Typography, Unstable_Grid2 as Grid } from '@mui/material';
-import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import { AccountProfile } from 'src/sections/account/account-profile';
-import { AccountProfileDetails } from 'src/sections/account/account-profile-details';
-import { SettingsPassword } from 'src/sections/account/settings-password';
+import ArrowUpOnSquareIcon from '@heroicons/react/24/solid/ArrowUpOnSquareIcon';
+import ArrowDownOnSquareIcon from '@heroicons/react/24/solid/ArrowDownOnSquareIcon';
+import PlusIcon from '@heroicons/react/24/solid/PlusIcon';
+import {
+  Box,
+  Button,
+  Container,
+  Pagination,
+  Stack,
+  SvgIcon,
+  Typography,
+  Unstable_Grid2 as Grid
+} from '@mui/material';
+import { Layout as DashboardLayout } from 'src/layouts/admin-dashboard/layout';
+import { UpdateDonationInformation } from 'src/sections/donations/donation-information';
+import { UploadDonationQRCode } from 'src/sections/donations/upload-qrcode';
+
 
 const Page = () => (
   <>
     <Head>
       <title>
-        Account | IU Alumni Portal
+        Donations | IU Alumni Portal
       </title>
     </Head>
     <Box
@@ -23,7 +35,7 @@ const Page = () => (
         <Stack spacing={3}>
           <div>
             <Typography variant="h4">
-              Account
+              Donations
             </Typography>
           </div>
           <div>
@@ -36,22 +48,14 @@ const Page = () => (
                 md={6}
                 lg={4}
               >
-                <AccountProfile />
+                <UploadDonationQRCode />
               </Grid>
               <Grid
                 xs={12}
                 md={6}
                 lg={8}
               >
-                <AccountProfileDetails />
-              </Grid>
-
-              <Grid
-                xs={12}
-                md={12}
-                lg={12}
-              >
-                <SettingsPassword />
+                <UpdateDonationInformation />
               </Grid>
             </Grid>
           </div>

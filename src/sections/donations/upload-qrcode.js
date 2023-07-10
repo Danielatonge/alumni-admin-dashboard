@@ -10,11 +10,11 @@ import {
 } from '@mui/material';
 
 const user = {
-    avatar: '/assets/avatars/avatar-anika-visser.png',
+    avatar: '/assets/avatars/avatar-miron-vitold.png',
     city: 'Los Angeles',
     country: 'USA',
     jobTitle: 'Senior Developer',
-    name: 'Anika Visser',
+    name: 'Daniel Atonge',
     timezone: 'GTM-7'
 };
 
@@ -28,32 +28,12 @@ export const UploadDonationQRCode = () => (
                     flexDirection: 'column'
                 }}
             >
-                <Avatar
-                    src={user.avatar}
-                    sx={{
-                        height: 80,
-                        mb: 2,
-                        width: 80
-                    }}
+                <img
+                    style={{ borderRadius: 20, height: 300 }}
+                    alt=""
+                    src="/assets/donations/qr-code.jpg"
                 />
-                <Typography
-                    gutterBottom
-                    variant="h5"
-                >
-                    {user.name}
-                </Typography>
-                <Typography
-                    color="text.secondary"
-                    variant="body2"
-                >
-                    {user.city} {user.country}
-                </Typography>
-                <Typography
-                    color="text.secondary"
-                    variant="body2"
-                >
-                    {user.timezone}
-                </Typography>
+
             </Box>
         </CardContent>
         <Divider />
@@ -62,7 +42,7 @@ export const UploadDonationQRCode = () => (
                 fullWidth
                 variant="text"
             >
-                Upload picture
+                Upload new QR Code
             </Button>
         </CardActions>
     </Card>

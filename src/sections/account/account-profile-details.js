@@ -13,32 +13,33 @@ import {
 
 const states = [
   {
-    value: 'alabama',
-    label: 'Alabama'
+    value: 'innopolis',
+    label: 'Innopolis'
   },
   {
-    value: 'new-york',
-    label: 'New York'
+    value: 'kazan',
+    label: 'Kazan'
   },
   {
-    value: 'san-francisco',
-    label: 'San Francisco'
+    value: 'moscow',
+    label: 'Moscow'
   },
   {
-    value: 'los-angeles',
-    label: 'Los Angeles'
+    value: 'petersburg',
+    label: 'Saint-Petersburg'
   }
 ];
 
 export const AccountProfileDetails = () => {
   const [values, setValues] = useState({
-    firstName: 'Anika',
-    lastName: 'Visser',
+    firstName: 'Daniel',
+    lastName: 'Atonge',
     email: 'daniel@innopolis.io',
     phone: '',
-    state: 'los-angeles',
-    country: 'USA'
+    state: 'Innopolis',
+    country: 'Russian Federation'
   });
+
 
   const handleChange = useCallback(
     (event) => {

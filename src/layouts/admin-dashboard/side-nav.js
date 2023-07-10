@@ -13,7 +13,6 @@ import {
   Typography,
   useMediaQuery
 } from '@mui/material';
-import { Logo } from 'src/components/logo';
 import { Scrollbar } from 'src/components/scrollbar';
 import { items } from './config';
 import { SideNavItem } from './side-nav-item';
@@ -45,7 +44,7 @@ export const SideNav = (props) => {
         <Box sx={{ p: 3 }}>
           <Box
             component={NextLink}
-            href="/"
+            href="/admin"
             sx={{
               display: 'inline-flex',
               height: 32,

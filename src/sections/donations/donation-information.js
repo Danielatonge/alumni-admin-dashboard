@@ -65,8 +65,8 @@ export const UpdateDonationInformation = () => {
         >
             <Card>
                 <CardHeader
-                    subheader="The information can be edited"
-                    title="Profile"
+                    subheader="How will the funds received be used:"
+                    title="Description"
                 />
                 <CardContent sx={{ pt: 0 }}>
                     <Box sx={{ m: -1.5 }}>
@@ -76,94 +76,20 @@ export const UpdateDonationInformation = () => {
                         >
                             <Grid
                                 xs={12}
-                                md={6}
+                                md={12}
                             >
                                 <TextField
                                     fullWidth
-                                    helperText="Please specify the first name"
-                                    label="First name"
-                                    name="firstName"
+                                    hiddenLabel
+                                    name="description"
                                     onChange={handleChange}
                                     required
-                                    value={values.firstName}
+                                    value={"User can do that"}
+                                    multiline
+                                    rows={8}
                                 />
                             </Grid>
-                            <Grid
-                                xs={12}
-                                md={6}
-                            >
-                                <TextField
-                                    fullWidth
-                                    label="Last name"
-                                    name="lastName"
-                                    onChange={handleChange}
-                                    required
-                                    value={values.lastName}
-                                />
-                            </Grid>
-                            <Grid
-                                xs={12}
-                                md={6}
-                            >
-                                <TextField
-                                    fullWidth
-                                    label="Email Address"
-                                    name="email"
-                                    onChange={handleChange}
-                                    required
-                                    value={values.email}
-                                />
-                            </Grid>
-                            <Grid
-                                xs={12}
-                                md={6}
-                            >
-                                <TextField
-                                    fullWidth
-                                    label="Phone Number"
-                                    name="phone"
-                                    onChange={handleChange}
-                                    type="number"
-                                    value={values.phone}
-                                />
-                            </Grid>
-                            <Grid
-                                xs={12}
-                                md={6}
-                            >
-                                <TextField
-                                    fullWidth
-                                    label="Country"
-                                    name="country"
-                                    onChange={handleChange}
-                                    required
-                                    value={values.country}
-                                />
-                            </Grid>
-                            <Grid
-                                xs={12}
-                                md={6}
-                            >
-                                <TextField
-                                    fullWidth
-                                    label="Select State"
-                                    name="state"
-                                    onChange={handleChange}
-                                    required
-                                    select
-                                    SelectProps={{ native: true }}
-                                    value={values.state}
-                                >
-                                    {states.map((option) => (
-                                        <option
-                                            key={option.value}
-                                            value={option.value}
-                                        >
-                                            {option.label}
-                                        </option>
-                                    ))}
-                                </TextField>
-                            </Grid>
+
                         </Grid>
                     </Box>
                 </CardContent>

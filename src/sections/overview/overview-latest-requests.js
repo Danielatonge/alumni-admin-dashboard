@@ -36,10 +36,10 @@ export const OverviewRequests = (props) => {
             <TableHead>
               <TableRow>
                 <TableCell>
-                  Order
+                  Id
                 </TableCell>
                 <TableCell>
-                  Customer
+                  Full name
                 </TableCell>
                 <TableCell sortDirection="desc">
                   Date
@@ -62,7 +62,7 @@ export const OverviewRequests = (props) => {
                       {order.ref}
                     </TableCell>
                     <TableCell>
-                      {order.customer.name}
+                      {order.name}
                     </TableCell>
                     <TableCell>
                       {createdAt}

@@ -4,7 +4,7 @@ import { SvgIcon } from '@mui/material';
 export const items = [
   {
     title: 'Overview',
-    path: '/',
+    path: '/admin',
     icon: (
       <SvgIcon fontSize="small">
         <ChartBarIcon />
@@ -12,8 +12,8 @@ export const items = [
     )
   },
   {
-    title: 'Request Pass',
-    path: '/manage_pass',
+    title: 'Pass Requests',
+    path: '/admin/pass_requests',
     icon: (
       <SvgIcon fontSize="small">
         <CreditCardIcon />
@@ -21,8 +21,8 @@ export const items = [
     )
   },
   {
-    title: 'Request Elective',
-    path: '/manage_electives',
+    title: 'Elective Requests',
+    path: '/admin/elective_requests',
     icon: (
       <SvgIcon fontSize="small">
         <RectangleStackIcon />
@@ -30,8 +30,17 @@ export const items = [
     )
   },
   {
-    title: 'Make Donations',
-    path: '/make_donations',
+    title: 'Manage Elective Courses',
+    path: '/admin/electives',
+    icon: (
+      <SvgIcon fontSize="small">
+        <CommandLineIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Manage Donation',
+    path: '/admin/donations',
     icon: (
       <SvgIcon fontSize="small">
         <BanknotesIcon />
@@ -40,7 +49,7 @@ export const items = [
   },
   {
     title: 'Account',
-    path: '/manage_account',
+    path: '/admin/account',
     icon: (
       <SvgIcon fontSize="small">
         <UserIcon />

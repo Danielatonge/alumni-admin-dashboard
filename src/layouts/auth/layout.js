@@ -86,7 +86,7 @@ export const Layout = (props) => {
               Welcome to{' '}
               <Box
                 component="a"
-                sx={{ color: '#15B79E' }}
+                sx={{ color: '#41BA21' }}
                 target="_blank"
               >
                 IU Alumni Portal
@@ -100,7 +100,7 @@ export const Layout = (props) => {
               The stay in touch with university related activities.
             </Typography>
             <img
-              style={{ height: 300, justifyItems: 'center', marginTop: 40, borderRadius: 15}}
+              style={{ height: 300, justifyItems: 'center', marginTop: 40, borderRadius: 15 }}
               alt=""
               src="/assets/innopolis-alumni-photo.jpeg"
             />
