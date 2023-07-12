@@ -20,8 +20,8 @@ import { SeverityPill } from 'src/components/severity-pill';
 
 const statusMap = {
   pending: 'warning',
-  delivered: 'success',
-  refunded: 'error'
+  approved: 'success',
+  rejected: 'error'
 };
 
 export const OverviewRequests = (props) => {

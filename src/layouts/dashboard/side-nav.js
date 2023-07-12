@@ -104,13 +104,16 @@ export const SideNav = (props) => {
             color="neutral.100"
             variant="subtitle2"
           >
-            Want to report a bug to the Alumni Developers
+            Want to report a bug to the Alumni Developer Team
           </Typography>
           <Typography
             color="neutral.500"
             variant="body2"
           >
-            Use this Telegram group chat
+            Use this  <a href="https://t.me/+54TTT9VXGZMyMGIy"
+              target="_blank"
+              style={{ color: '#40BA21' }}
+              rel="noreferrer"> Telegram group chat</a>
           </Typography>
         </Box>
       </Box>

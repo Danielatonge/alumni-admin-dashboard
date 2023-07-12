@@ -5,6 +5,12 @@ import { OverviewRequests } from 'src/sections/overview/overview-latest-requests
 
 const now = new Date();
 
+const statusMap = {
+  pending: 'warning',
+  approved: 'success',
+  rejected: 'error'
+};
+
 const passRequest = [
   {
     id: 'f69f88012978187a6c12897f',
@@ -20,7 +26,7 @@ const passRequest = [
     amount: 25.1,
     name: 'Cao Yu',
     createdAt: 1555016400000,
-    status: 'delivered'
+    status: 'approved'
   },
   {
     id: '01a5230c811bd04996ce7c13',
@@ -28,7 +34,7 @@ const passRequest = [
     amount: 10.99,
     name: 'Alexa Richardson',
     createdAt: 1554930000000,
-    status: 'refunded'
+    status: 'rejected'
   }
 ]
 
@@ -47,7 +53,7 @@ const electiveRequest = [
     amount: 25.1,
     name: 'Cao Yu',
     createdAt: 1555016400000,
-    status: 'delivered'
+    status: 'approved'
   },
   {
     id: '01a5230c811bd04996ce7c13',
@@ -55,7 +61,7 @@ const electiveRequest = [
     amount: 10.99,
     name: 'Alexa Richardson',
     createdAt: 1554930000000,
-    status: 'refunded'
+    status: 'rejected'
   }
 ]
 const Page = () => (

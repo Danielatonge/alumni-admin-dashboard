@@ -18,6 +18,7 @@ import {
 } from '@mui/material';
 import { useAuth } from 'src/hooks/use-auth';
 import { Layout as AuthLayout } from 'src/layouts/auth/layout';
+import { loginRegularUser } from 'src/api';
 
 const Page = () => {
   const router = useRouter();
@@ -42,8 +43,11 @@ const Page = () => {
     }),
     onSubmit: async (values, helpers) => {
       try {
-        await auth.signIn(values.email, values.password);
-        router.push('/');
+        // new code
+        const response = await loginRegularUser({ email: values.email, password: values.password });
+        console.log(response);
+        // await auth.signIn(values.email, values.password);
+        // router.push('/');
       } catch (err) {
         helpers.setStatus({ success: false });
         helpers.setErrors({ submit: err.message });
@@ -170,9 +174,11 @@ const Page = () => {
                 size="large"
                 sx={{ mt: 3 }}
                 onClick={handleSkip}
+                style={{ border: '3px solid' }}
               >
-                Skip authentication
+                Innopolis University SSO
               </Button>
+
               <Alert
                 color="primary"
                 severity="info"
@@ -183,6 +189,14 @@ const Page = () => {
                 </div>
               </Alert>
             </form>
+            <Button
+              fullWidth
+              size="large"
+              sx={{ mt: 3 }}
+              onClick={handleSkip}
+            >
+              Skip authentication
+            </Button>
 
           </div>
         </Box>

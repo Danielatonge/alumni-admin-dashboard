@@ -109,7 +109,10 @@ export const SideNav = (props) => {
             color="neutral.500"
             variant="body2"
           >
-            Use this Telegram group chat
+            Use this <a href="https://t.me/+54TTT9VXGZMyMGIy"
+              target="_blank"
+              style={{ color: '#40BA21' }}
+              rel="noreferrer"> Telegram group chat</a>
           </Typography>
         </Box>
       </Box>
