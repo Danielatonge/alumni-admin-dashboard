@@ -18,7 +18,6 @@ import {
 } from '@mui/material';
 import { useAuth } from 'src/hooks/use-auth';
 import { Layout as AuthLayout } from 'src/layouts/auth/layout';
-import { loginRegularUser } from 'src/api';
 
 const Page = () => {
   const router = useRouter();
@@ -26,8 +25,8 @@ const Page = () => {
   const [method, setMethod] = useState('email');
   const formik = useFormik({
     initialValues: {
-      email: 'daniel@innopolis.io',
-      password: 'Password123!',
+      email: 'd.atonge@innopolis.university',
+      password: 'string',
       submit: null
     },
     validationSchema: Yup.object({
@@ -43,10 +42,7 @@ const Page = () => {
     }),
     onSubmit: async (values, helpers) => {
       try {
-        // new code
-        const response = await loginRegularUser({ email: values.email, password: values.password });
-        console.log(response);
-        // await auth.signIn(values.email, values.password);
+        await auth.signIn(values.email, values.password);
         // router.push('/');
       } catch (err) {
         helpers.setStatus({ success: false });
@@ -185,7 +181,7 @@ const Page = () => {
                 sx={{ mt: 3 }}
               >
                 <div>
-                  You can use <b>daniel@innopolis.io</b> and password <b>Password123!</b>
+                  You can use <b>d.atonge@innopolis.university</b> and password <b>string</b>
                 </div>
               </Alert>
             </form>

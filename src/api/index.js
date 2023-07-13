@@ -11,7 +11,7 @@ export const loginRegularUser = async ({ email, password }) => {
     const options = {
         headers: {
             "accept": "application/json",
-            'Content-Type': undefined,
+            'Remove-Content-Type': true,
         },
         body: formData
     }

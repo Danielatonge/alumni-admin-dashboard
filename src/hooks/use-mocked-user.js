@@ -5,6 +5,6 @@ export const useMockedUser = () => {
     id: '5e86809283e28b96d2d38537',
     avatar: '/assets/avatars/avatar-miron-vitold.png',
     name: 'Daniel Atonge',
-    email: 'daniel.atonge@innopolis.io'
+    email: 'd.atonge@innopolis.university'
   };
 };

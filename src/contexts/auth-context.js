@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useReducer, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { loginRegularUser } from 'src/api';
 
 const HANDLERS = {
   INITIALIZE: 'INITIALIZE',
@@ -85,7 +86,7 @@ export const AuthProvider = (props) => {
         id: '5e86809283e28b96d2d38537',
         avatar: '/assets/avatars/avatar-miron-vitold.png',
         name: 'Daniel Atonge',
-        email: 'daniel.atonge@innopolis.io'
+        email: 'd.atonge@innopolis.university'
       };
 
       dispatch({
@@ -118,7 +119,7 @@ export const AuthProvider = (props) => {
       id: '5e86809283e28b96d2d38537',
       avatar: '/assets/avatars/avatar-miron-vitold.png',
       name: 'Daniel Atonge',
-      email: 'daniel.atonge@innopolis.io'
+      email: 'd.atonge@innopolis.university'
     };
 
     dispatch({
@@ -128,10 +129,9 @@ export const AuthProvider = (props) => {
   };
 
   const signIn = async (email, password) => {
-    if (email !== 'daniel@innopolis.io' || password !== 'Password123!') {
-      throw new Error('Please check your email and password');
-    }
 
+    const response = await loginRegularUser({ email, password });
+    console.log(response);
     try {
       window.sessionStorage.setItem('authenticated', 'true');
     } catch (err) {
@@ -142,7 +142,7 @@ export const AuthProvider = (props) => {
       id: '5e86809283e28b96d2d38537',
       avatar: '/assets/avatars/avatar-miron-vitold.png',
       name: 'Daniel Atonge',
-      email: 'daniel.atonge@innopolis.io'
+      email: 'd.atonge@innopolis.university'
     };
 
     dispatch({

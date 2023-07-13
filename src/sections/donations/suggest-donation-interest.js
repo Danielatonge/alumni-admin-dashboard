@@ -17,7 +17,7 @@ export const SuggestDonationInterest = () => {
     const [values, setValues] = useState({
         firstName: 'Anika',
         lastName: 'Visser',
-        email: 'daniel@innopolis.io',
+        email: 'd.atonge@innopolis.university',
         phone: '',
         state: 'los-angeles',
         country: 'USA'

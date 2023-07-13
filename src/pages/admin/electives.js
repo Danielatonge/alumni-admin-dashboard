@@ -66,7 +66,7 @@ const data = [
     },
     avatar: '/assets/avatars/avatar-miron-vitold.png',
     createdAt: subDays(subHours(now, 11), 2).getTime(),
-    email: 'daniel.atonge@innopolis.io',
+    email: 'd.atonge@innopolis.university',
     name: 'Daniel Atonge',
     phone: '908-691-3242'
   },
