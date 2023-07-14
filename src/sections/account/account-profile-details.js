@@ -13,31 +13,36 @@ import {
 
 const states = [
   {
-    value: 'innopolis',
-    label: 'Innopolis'
+    value: 'SNE',
+    label: 'Security Networks'
   },
   {
-    value: 'kazan',
-    label: 'Kazan'
+    value: 'SE',
+    label: 'Software Engineering'
   },
   {
-    value: 'moscow',
-    label: 'Moscow'
+    value: 'RO',
+    label: 'Robotics'
   },
   {
-    value: 'petersburg',
-    label: 'Saint-Petersburg'
+    value: 'AI',
+    label: 'Data Science & Artificial Intelligence'
   }
 ];
 
+
 export const AccountProfileDetails = () => {
   const [values, setValues] = useState({
-    firstName: 'Daniel',
-    lastName: 'Atonge',
+    fullName: 'Daniel Atonge',
+    telegramHandle: "@hardriive",
     email: 'd.atonge@innopolis.university',
-    phone: '',
-    state: 'Innopolis',
-    country: 'Russian Federation'
+    phone: '+79998112665',
+    graduatedTrack: 'SE',
+    graduatedYear: "2022",
+    currentCity: "Innopolis",
+    currentCompany: "SciVenia",
+    companyRole: "Team Lead",
+    aboutYou: 'I love and practice collective sport'
   });
 
 
@@ -81,25 +86,11 @@ export const AccountProfileDetails = () => {
               >
                 <TextField
                   fullWidth
-                  helperText="Please specify the first name"
-                  label="First name"
-                  name="firstName"
+                  label="Full name"
+                  name="fullName"
                   onChange={handleChange}
                   required
-                  value={values.firstName}
-                />
-              </Grid>
-              <Grid
-                xs={12}
-                md={6}
-              >
-                <TextField
-                  fullWidth
-                  label="Last name"
-                  name="lastName"
-                  onChange={handleChange}
-                  required
-                  value={values.lastName}
+                  value={values.fullName}
                 />
               </Grid>
               <Grid
@@ -121,10 +112,24 @@ export const AccountProfileDetails = () => {
               >
                 <TextField
                   fullWidth
+                  label="Telegram handle"
+                  name="telegramHandle"
+                  onChange={handleChange}
+                  required
+                  value={values.telegramHandle}
+                />
+              </Grid>
+              <Grid
+                xs={12}
+                md={6}
+              >
+                <TextField
+                  fullWidth
                   label="Phone Number"
                   name="phone"
+                  required
                   onChange={handleChange}
-                  type="number"
+
                   value={values.phone}
                 />
               </Grid>
@@ -134,26 +139,13 @@ export const AccountProfileDetails = () => {
               >
                 <TextField
                   fullWidth
-                  label="Country"
-                  name="country"
-                  onChange={handleChange}
-                  required
-                  value={values.country}
-                />
-              </Grid>
-              <Grid
-                xs={12}
-                md={6}
-              >
-                <TextField
-                  fullWidth
-                  label="Select State"
-                  name="state"
+                  label="Graduated Track"
+                  name="graduatedTrack"
                   onChange={handleChange}
                   required
                   select
                   SelectProps={{ native: true }}
-                  value={values.state}
+                  value={values.graduatedTrack}
                 >
                   {states.map((option) => (
                     <option
@@ -165,7 +157,74 @@ export const AccountProfileDetails = () => {
                   ))}
                 </TextField>
               </Grid>
+              <Grid
+                xs={12}
+                md={6}
+              >
+                <TextField
+                  fullWidth
+                  label="Graduated Year"
+                  name="graduatedYear"
+                  onChange={handleChange}
+                  required
+                  value={values.graduatedYear}
+                />
+              </Grid>
+              <Grid
+                xs={12}
+                md={6}
+              >
+                <TextField
+                  fullWidth
+                  label="Current City"
+                  name="currentCity"
+                  onChange={handleChange}
+                  required
+                  value={values.currentCity}
+                />
+              </Grid>
+              <Grid
+                xs={12}
+                md={6}
+              >
+                <TextField
+                  fullWidth
+                  label="Current Company"
+                  name="currentCompany"
+                  onChange={handleChange}
+                  required
+                  value={values.currentCompany}
+                />
+              </Grid>
+              <Grid
+                xs={12}
+                md={6}
+              >
+                <TextField
+                  fullWidth
+                  label="Company Role"
+                  name="companyRole"
+                  onChange={handleChange}
+                  required
+                  value={values.companyRole}
+                />
+              </Grid>
+              <Grid
+                xs={12}
+              >
+                <TextField
+                  fullWidth
+                  label="Fun Fact About You"
+                  name="aboutYou"
+                  onChange={handleChange}
+                  required
+                  multiline
+                  rows={3}
+                  value={values.aboutYou}
+                />
+              </Grid>
             </Grid>
+
           </Box>
         </CardContent>
         <Divider />

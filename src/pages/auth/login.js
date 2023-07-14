@@ -43,7 +43,7 @@ const Page = () => {
     onSubmit: async (values, helpers) => {
       try {
         await auth.signIn(values.email, values.password);
-        // router.push('/');
+        router.push('/');
       } catch (err) {
         helpers.setStatus({ success: false });
         helpers.setErrors({ submit: err.message });
@@ -144,9 +144,7 @@ const Page = () => {
                   value={formik.values.password}
                 />
               </Stack>
-              <FormHelperText sx={{ mt: 1 }}>
-                Optionally you can skip.
-              </FormHelperText>
+
               {formik.errors.submit && (
                 <Typography
                   color="error"
@@ -170,7 +168,7 @@ const Page = () => {
                 size="large"
                 sx={{ mt: 3 }}
                 onClick={handleSkip}
-                style={{ border: '3px solid' }}
+                style={{ border: '3px solid', height: 45 }}
               >
                 Innopolis University SSO
               </Button>

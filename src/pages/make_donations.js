@@ -13,10 +13,9 @@ import {
   Unstable_Grid2 as Grid
 } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import { UpdateDonationInformation } from 'src/sections/donations/donation-information';
-import { UploadDonationQRCode } from 'src/sections/donations/upload-qrcode';
 import { SuggestDonationInterest } from 'src/sections/donations/suggest-donation-interest';
 import { PaymentQRCode } from 'src/sections/donations/payment-qrcode';
+import { BankDetails } from 'src/sections/donations/bank-details';
 
 
 const Page = () => (
@@ -48,17 +47,20 @@ const Page = () => (
               <Grid
                 xs={12}
                 md={6}
-                lg={4}
+                lg={8}
               >
-                <PaymentQRCode />
+                <BankDetails />
               </Grid>
               <Grid
                 xs={12}
                 md={6}
-                lg={8}
+                lg={4}
               >
+                <PaymentQRCode />
                 <SuggestDonationInterest />
               </Grid>
+
+
             </Grid>
           </div>
         </Stack>

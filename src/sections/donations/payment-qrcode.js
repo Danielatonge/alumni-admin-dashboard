@@ -11,7 +11,7 @@ import {
 
 
 export const PaymentQRCode = () => (
-    <Card>
+    <Card sx={{ mb: 6 }}>
         <CardContent>
             <Box
                 sx={{

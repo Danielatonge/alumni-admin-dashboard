@@ -49,9 +49,6 @@ const Page = () => (
               >
                 <SettingsPassword />
               </Grid>
-
-
-
             </Grid>
           </div>
         </Stack>

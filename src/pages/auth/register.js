@@ -15,6 +15,7 @@ const Page = () => {
       email: '',
       name: '',
       password: '',
+      confirmPassword: '',
       submit: null
     },
     validationSchema: Yup.object({
@@ -30,12 +31,17 @@ const Page = () => {
       password: Yup
         .string()
         .max(255)
-        .required('Password is required')
+        .required('Password is required'),
+      confirmPassword: Yup
+        .string()
+        .max(255)
+        .required('Confirm password is required'),
     }),
     onSubmit: async (values, helpers) => {
       try {
-        await auth.signUp(values.email, values.name, values.password);
-        router.push('/');
+        console.log("HEYUE")
+        await auth.signUp(values.email, values.name, values.password, values.confirmPassword);
+        router.push('/auth/login');
       } catch (err) {
         helpers.setStatus({ success: false });
         helpers.setErrors({ submit: err.message });
@@ -127,6 +133,17 @@ const Page = () => {
                   onChange={formik.handleChange}
                   type="password"
                   value={formik.values.password}
+                />
+                <TextField
+                  error={!!(formik.touched.confirmPassword && formik.errors.confirmPassword)}
+                  fullWidth
+                  helperText={formik.touched.confirmPassword && formik.errors.confirmPassword}
+                  label="Confirm Password"
+                  name="confirmPassword"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  type="password"
+                  value={formik.values.confirmPassword}
                 />
               </Stack>
               {formik.errors.submit && (

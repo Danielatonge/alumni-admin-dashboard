@@ -5,7 +5,7 @@ PORT = PORT || 9001;
 ROOT_URL = ROOT_URL || `http://127.0.0.1:${PORT}`;
 
 const sendRequest = async (path, options = {}) => {
-    const removeContentType = options.headers['Remove-Content-Type']
+    const removeContentType = options.headers && options.headers['Remove-Content-Type']
     let headers;
     if (removeContentType) {
         headers = { ...(options.headers || {}), };
@@ -20,12 +20,14 @@ const sendRequest = async (path, options = {}) => {
         ...options,
         headers,
     });
-    console.log(response);
-    const jsonData = await response.json();
 
-    if (jsonData.error) {
-        throw new Error(jsonData.error);
+    console.log(response);
+    if (!response.ok) {
+        const failedInformation = await response.json();
+        throw new Error(failedInformation.detail);
     }
+
+    const jsonData = await response.json();
 
     return jsonData;
 };

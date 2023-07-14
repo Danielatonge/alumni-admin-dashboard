@@ -34,23 +34,17 @@ const Page = () => (
               <Grid
                 xs={12}
                 md={6}
-                lg={4}
-              >
-                <AccountProfile />
-              </Grid>
-              <Grid
-                xs={12}
-                md={6}
                 lg={8}
               >
                 <AccountProfileDetails />
               </Grid>
-
               <Grid
                 xs={12}
-                md={12}
-                lg={12}
+                md={6}
+                lg={4}
               >
+                <AccountProfile />
+                <div style={{ height: 30 }}></div>
                 <SettingsPassword />
               </Grid>
             </Grid>

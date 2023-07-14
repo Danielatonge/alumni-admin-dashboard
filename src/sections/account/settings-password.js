@@ -12,8 +12,8 @@ import {
 
 export const SettingsPassword = () => {
   const [values, setValues] = useState({
-    password: '',
-    confirm: ''
+    currentPassword: '',
+    newPassword: ''
   });
 
   const handleChange = useCallback(
@@ -48,19 +48,19 @@ export const SettingsPassword = () => {
           >
             <TextField
               fullWidth
-              label="Password"
-              name="password"
+              label="Enter current password"
+              name="currentPassword"
               onChange={handleChange}
               type="password"
-              value={values.password}
+              value={values.currentPassword}
             />
             <TextField
               fullWidth
-              label="Password (Confirm)"
-              name="confirm"
+              label="Enter new password"
+              name="newPassword"
               onChange={handleChange}
               type="password"
-              value={values.confirm}
+              value={values.newPassword}
             />
           </Stack>
         </CardContent>

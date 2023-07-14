@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { loginRegularUser } from 'src/api';
+import { getCurrentUser, loginRegularUser, registerRegularUser } from 'src/api';
 
 const HANDLERS = {
   INITIALIZE: 'INITIALIZE',
@@ -74,30 +74,41 @@ export const AuthProvider = (props) => {
     initialized.current = true;
 
     let isAuthenticated = false;
+    let accessToken;
 
     try {
       isAuthenticated = window.sessionStorage.getItem('authenticated') === 'true';
+      accessToken = window.sessionStorage.getItem('alumniToken') || ''
     } catch (err) {
       console.error(err);
     }
 
-    if (isAuthenticated) {
-      const user = {
-        id: '5e86809283e28b96d2d38537',
-        avatar: '/assets/avatars/avatar-miron-vitold.png',
-        name: 'Daniel Atonge',
-        email: 'd.atonge@innopolis.university'
-      };
+    try {
+      if (isAuthenticated && accessToken) {
+        const userInfo = await getCurrentUser({ accessToken });
+        const user = {
+          ...userInfo,
+          id: '5e86809283e28b96d2d38537',
+          avatar: '/assets/avatars/avatar-miron-vitold.png',
+          name: 'Daniel Atonge',
+          email: 'd.atonge@innopolis.university'
+        };
 
-      dispatch({
-        type: HANDLERS.INITIALIZE,
-        payload: user
-      });
-    } else {
+        dispatch({
+          type: HANDLERS.INITIALIZE,
+          payload: user
+        });
+      } else {
+        dispatch({
+          type: HANDLERS.INITIALIZE
+        });
+      }
+    } catch (err) {
       dispatch({
         type: HANDLERS.INITIALIZE
       });
     }
+
   };
 
   useEffect(
@@ -130,15 +141,19 @@ export const AuthProvider = (props) => {
 
   const signIn = async (email, password) => {
 
-    const response = await loginRegularUser({ email, password });
-    console.log(response);
+    const { access_token: accessToken } = await loginRegularUser({ email, password });
+    const userInfo = await getCurrentUser({ accessToken });
+
+    console.log(userInfo);
     try {
       window.sessionStorage.setItem('authenticated', 'true');
+      window.sessionStorage.setItem('alumniToken', accessToken);
     } catch (err) {
       console.error(err);
     }
 
     const user = {
+      ...userInfo,
       id: '5e86809283e28b96d2d38537',
       avatar: '/assets/avatars/avatar-miron-vitold.png',
       name: 'Daniel Atonge',
@@ -151,8 +166,11 @@ export const AuthProvider = (props) => {
     });
   };
 
-  const signUp = async (email, name, password) => {
-    throw new Error('Sign up is not implemented');
+  const signUp = async (email, name, password, confirmPassword) => {
+    const registeredUser = await registerRegularUser({ name, email, password, confirmPassword });
+
+    console.log(registeredUser);
+
   };
 
   const signOut = () => {
